@@ -1,0 +1,30 @@
+{% extends "base1.html" %}
+
+{% block content %}
+<section class="overview">
+    <h2>Overview</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>Total Events</h3>
+            <p id="total-events">{{ events.count }}</p>
+        </div>
+        <div class="card">
+            <h3>Total Registrations</h3>
+            <p id="total-registrations">{{ total_registrations }}</p>
+        </div>
+        <div class="card">
+            <h3>Upcoming Events</h3>
+            <p id="upcoming-events">5</p>
+        </div>
+    </div>
+</section>
+
+<!-- <section class="navigation">
+    <h2>Manage System</h2>
+    <div class="nav-buttons">
+        <a href="{% url 'manage_events' %}" class="button">Manage Events</a>
+        <a href="{% url 'existing_events' %}" class="button">Existing Events</a>
+        <a href="{% url 'view_event_registrations' %}" class="button">View Registrations</a>
+    </div>
+</section> -->
+{% endblock %}

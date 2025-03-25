@@ -1,0 +1,18 @@
+{% extends "base1.html" %}
+
+{% block content %}
+<section class="admin-section">
+    <h2>Existing Events</h2>
+    <ul>
+        {% for event in events %}
+            <li style="display: flex; align-items: center; margin-bottom: 8px;">
+                <span style="width: 200px;">{{ event.name }} - {{ event.category }}</span>
+                <form method="POST" style="display:inline;">
+                    {% csrf_token %}
+                    <button type="submit" name="delete_event" value="{{ event.id }}" style="margin-left: 40px;">Delete</button>
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+</section>
+{% endblock %}

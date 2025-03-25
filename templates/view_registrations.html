@@ -1,0 +1,15 @@
+{% extends "base1.html" %}
+
+{% block content %}
+<section class="admin-section">
+    <h2>View Event Registrations</h2>
+    <label for="select-event">Select Event:</label>
+    <select id="select-event" required>
+        <option value="">--Select an Event--</option>
+        {% for event in events %}
+            <option value="{{ event.id }}">{{ event.name }}</option>
+        {% endfor %}
+    </select>
+    <button id="view-registrations">View Registrations</button>
+</section>
+{% endblock %}
